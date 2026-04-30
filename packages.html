@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Packages</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="tools.html">Tools</a>
+</nav>
+
+<div class="container">
+
+  <h1>Launch Package</h1>
+
+  <button onclick="togglePackages()">Launch ▼</button>
+
+  <div id="pkgMenu" class="dropdown hidden">
+    <div onclick="launchPkg('pkg1')">GeoAI Toolkit</div>
+    <div onclick="launchPkg('pkg2')">Climate ML Package</div>
+  </div>
+
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
