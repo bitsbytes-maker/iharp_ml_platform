@@ -3,6 +3,100 @@
 <head>
   <title>Tools</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+      margin-top: 32px;
+      text-align: left;
+    }
+
+    .tool-card {
+      border: 1px solid #e5e5e5;
+      border-radius: 12px;
+      padding: 24px;
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .tool-card:hover {
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+      transform: translateY(-2px);
+    }
+
+    .tool-card h3 {
+      margin: 0 0 8px 0;
+      font-size: 18px;
+      color: #0074e0;
+    }
+
+    .tool-card .tool-type {
+      font-size: 12px;
+      color: #888;
+      margin-bottom: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .tool-card p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #555;
+      margin: 0 0 16px 0;
+    }
+
+    .tool-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .tag {
+      background: #eef4fd;
+      color: #0074e0;
+      font-size: 11px;
+      padding: 3px 9px;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+
+    .tool-links {
+      display: flex;
+      gap: 10px;
+    }
+
+    .tool-links a {
+      display: inline-block;
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+
+    .btn-launch {
+      background: #0074e0;
+      color: white;
+    }
+
+    .btn-launch:hover {
+      background: #005bb5;
+    }
+
+    .btn-secondary {
+      background: #f0f0f0;
+      color: #333;
+    }
+
+    .btn-secondary:hover {
+      background: #ddd;
+    }
+  </style>
 </head>
 
 <body>
@@ -23,12 +117,63 @@
 <div class="container">
 
   <h1>Select Tool</h1>
+  <p style="color:#666; margin-top: -10px; margin-bottom: 8px;">Interactive tools and web applications for ML and geospatial research.</p>
 
-  <button onclick="toggleTools()">Choose Tool ▼</button>
+  <div class="tools-grid">
 
-  <div id="toolsMenu" class="dropdown hidden">
-    <div onclick="openTool('tool1')">Data Visualization Tool</div>
-    <div onclick="openTool('tool2')">ML Explorer</div>
+    <!-- CMAD Tool -->
+    <div class="tool-card">
+      <h3>CMAD — Anomaly Detection Tool</h3>
+      <div class="tool-type">Web Application</div>
+      <p>
+        Interactive interface for the <strong>Convolution Matrix Anomaly Detection (CMAD)</strong>
+        framework. Upload your 2D spatio-temporal data, run unsupervised anomaly detection,
+        and visualize clusters of extreme negative events — no labels required.
+      </p>
+      <div class="tool-tags">
+        <span class="tag">GeoAI</span>
+        <span class="tag">Anomaly Detection</span>
+        <span class="tag">Climate</span>
+        <span class="tag">Visualization</span>
+      </div>
+      <div class="tool-links">
+        <a href="https://brandie-uncondoled-jayme.ngrok-free.dev" target="_blank" class="btn-launch">Launch Tool ↗</a>
+        <a href="packages.html" class="btn-secondary">View Package</a>
+      </div>
+    </div>
+
+    <!-- Data Visualization Tool (existing) -->
+    <div class="tool-card">
+      <h3>Data Visualization Tool</h3>
+      <div class="tool-type">Web Application</div>
+      <p>
+        Explore and visualize scientific datasets with interactive charts and spatial maps.
+      </p>
+      <div class="tool-tags">
+        <span class="tag">Visualization</span>
+        <span class="tag">Data Science</span>
+      </div>
+      <div class="tool-links">
+        <a href="#" onclick="openTool('tool1')" class="btn-launch">Launch Tool</a>
+      </div>
+    </div>
+
+    <!-- ML Explorer (existing) -->
+    <div class="tool-card">
+      <h3>ML Explorer</h3>
+      <div class="tool-type">Web Application</div>
+      <p>
+        An interactive environment to experiment with machine learning models and parameters.
+      </p>
+      <div class="tool-tags">
+        <span class="tag">Machine Learning</span>
+        <span class="tag">Interactive</span>
+      </div>
+      <div class="tool-links">
+        <a href="#" onclick="openTool('tool2')" class="btn-launch">Launch Tool</a>
+      </div>
+    </div>
+
   </div>
 
 </div>

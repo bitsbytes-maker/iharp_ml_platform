@@ -3,6 +3,117 @@
 <head>
   <title>Packages</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+      margin-top: 32px;
+      text-align: left;
+    }
+
+    .package-card {
+      border: 1px solid #e5e5e5;
+      border-radius: 12px;
+      padding: 24px;
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .package-card:hover {
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+      transform: translateY(-2px);
+    }
+
+    .package-card h3 {
+      margin: 0 0 8px 0;
+      font-size: 18px;
+      color: #0074e0;
+    }
+
+    .package-card .pkg-version {
+      font-size: 12px;
+      color: #888;
+      margin-bottom: 12px;
+    }
+
+    .package-card p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #555;
+      margin: 0 0 16px 0;
+    }
+
+    .package-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .tag {
+      background: #eef4fd;
+      color: #0074e0;
+      font-size: 11px;
+      padding: 3px 9px;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+
+    .pkg-links {
+      display: flex;
+      gap: 10px;
+    }
+
+    .pkg-links a {
+      display: inline-block;
+      padding: 7px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+
+    .btn-pypi {
+      background: #0074e0;
+      color: white;
+    }
+
+    .btn-pypi:hover {
+      background: #005bb5;
+    }
+
+    .btn-github {
+      background: #f0f0f0;
+      color: #333;
+    }
+
+    .btn-github:hover {
+      background: #ddd;
+    }
+
+    .btn-paper {
+      background: #f0f7ef;
+      color: #2a7a2a;
+    }
+
+    .btn-paper:hover {
+      background: #d8edd6;
+    }
+
+    .install-block {
+      background: #f5f7fa;
+      border-radius: 6px;
+      padding: 8px 14px;
+      font-family: monospace;
+      font-size: 13px;
+      color: #333;
+      margin-bottom: 16px;
+      border: 1px solid #e5e5e5;
+    }
+  </style>
 </head>
 
 <body>
@@ -23,12 +134,68 @@
 <div class="container">
 
   <h1>Launch Package</h1>
+  <p style="color:#666; margin-top: -10px; margin-bottom: 8px;">Scientific Python packages developed under the iHARP ecosystem.</p>
 
-  <button onclick="togglePackages()">Launch ▼</button>
+  <div class="packages-grid">
 
-  <div id="pkgMenu" class="dropdown hidden">
-    <div onclick="launchPkg('pkg1')">GeoAI Toolkit</div>
-    <div onclick="launchPkg('pkg2')">Climate ML Package</div>
+    <!-- CMAD Package -->
+    <div class="package-card">
+      <h3>CMAD</h3>
+      <div class="pkg-version">v0.1.0.post6 &nbsp;·&nbsp; Python ≥ 3.8 &nbsp;·&nbsp; License: iHARP</div>
+      <p>
+        A lightweight, unsupervised framework for detecting <strong>clusters of extreme negative
+        spatio-temporal anomalies</strong> in sequential 2D data. Designed for applications such as
+        sea ice melt detection, environmental degradation, and geospatial change analysis.
+        Requires no training labels and adapts automatically to arbitrary spatial resolutions.
+      </p>
+      <div class="package-tags">
+        <span class="tag">GeoAI</span>
+        <span class="tag">Anomaly Detection</span>
+        <span class="tag">Climate</span>
+        <span class="tag">Cryosphere</span>
+        <span class="tag">Spatio-Temporal</span>
+        <span class="tag">Unsupervised</span>
+      </div>
+      <div class="install-block">pip install cmad</div>
+      <div class="pkg-links">
+        <a href="https://pypi.org/project/cmad/" target="_blank" class="btn-pypi">PyPI</a>
+        <a href="https://github.com/bitsbytes-maker/cmad" target="_blank" class="btn-github">GitHub</a>
+        <a href="https://doi.org/10.1145/3678717.3691280" target="_blank" class="btn-paper">Paper</a>
+      </div>
+    </div>
+
+    <!-- GeoAI Toolkit (existing placeholder) -->
+    <div class="package-card">
+      <h3>GeoAI Toolkit</h3>
+      <div class="pkg-version">Coming soon</div>
+      <p>
+        Tools for geospatial AI workflows and spatial data processing pipelines.
+      </p>
+      <div class="package-tags">
+        <span class="tag">GeoAI</span>
+        <span class="tag">GIS</span>
+      </div>
+      <div class="pkg-links">
+        <a href="#" class="btn-github">Learn More</a>
+      </div>
+    </div>
+
+    <!-- Climate ML Package (existing placeholder) -->
+    <div class="package-card">
+      <h3>Climate ML Package</h3>
+      <div class="pkg-version">Coming soon</div>
+      <p>
+        Machine learning utilities tailored for climate and atmospheric science datasets.
+      </p>
+      <div class="package-tags">
+        <span class="tag">Climate</span>
+        <span class="tag">ML</span>
+      </div>
+      <div class="pkg-links">
+        <a href="#" class="btn-github">Learn More</a>
+      </div>
+    </div>
+
   </div>
 
 </div>
