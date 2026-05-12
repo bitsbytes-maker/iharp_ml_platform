@@ -1,1 +1,8 @@
-theme: null
+/index.html
+/about.html
+/tools.html      ← root, not /tools/tools.html
+/packages.html   ← root, not /packages/packages.html
+/css/style.css
+/images/
+/.nojekyll
+/_config.yml
