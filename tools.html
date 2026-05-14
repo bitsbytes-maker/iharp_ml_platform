@@ -104,8 +104,9 @@
       background: none; border: none; color: #0074e0;
       font-size: 13px; font-weight: 600; cursor: pointer;
       padding: 0; text-align: left;
+      text-decoration: underline;
     }
-    .cmad-read-more:hover { text-decoration: underline; }
+    .cmad-read-more:hover { color: #005bb5; }
 
     /* ── popup overlay ── */
     .cmad-overlay {
@@ -183,7 +184,42 @@
     <div class="cmad-card">
 
       <div class="cmad-left">
-        <img src="images/cmad_logo.svg" alt="CMAD Logo" style="width:150px; height:auto; display:block;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="150" viewBox="0 0 680 260" role="img" style="display:block;">
+          <title>CMAD Logo</title>
+          <defs><clipPath id="hexClip"><polygon points="340,44 410,84 410,164 340,204 270,164 270,84"/></clipPath></defs>
+          <rect width="680" height="260" fill="white"/>
+          <polygon points="340,44 410,84 410,164 340,204 270,164 270,84" fill="#042C53"/>
+          <polygon points="340,44 410,84 410,164 340,204 270,164 270,84" fill="none" stroke="#378ADD" stroke-width="1.5"/>
+          <g clip-path="url(#hexClip)" opacity="0.5">
+            <line x1="270" y1="84" x2="410" y2="84" stroke="#378ADD" stroke-width="0.5"/>
+            <line x1="270" y1="111" x2="410" y2="111" stroke="#378ADD" stroke-width="0.5"/>
+            <line x1="270" y1="137" x2="410" y2="137" stroke="#378ADD" stroke-width="0.5"/>
+            <line x1="270" y1="164" x2="410" y2="164" stroke="#378ADD" stroke-width="0.5"/>
+            <line x1="294" y1="44" x2="294" y2="204" stroke="#378ADD" stroke-width="0.5"/>
+            <line x1="317" y1="44" x2="317" y2="204" stroke="#378ADD" stroke-width="0.5"/>
+            <line x1="340" y1="44" x2="340" y2="204" stroke="#378ADD" stroke-width="0.5"/>
+            <line x1="363" y1="44" x2="363" y2="204" stroke="#378ADD" stroke-width="0.5"/>
+            <line x1="386" y1="44" x2="386" y2="204" stroke="#378ADD" stroke-width="0.5"/>
+          </g>
+          <g clip-path="url(#hexClip)">
+            <path d="M340,68 C356,70 368,78 376,90 C384,102 382,116 386,128 C390,140 398,146 396,158 C394,168 384,172 378,180 C372,188 372,196 362,200 C352,204 342,198 332,198 C322,198 312,204 302,200 C292,196 290,186 284,178 C278,170 268,166 266,156 C264,144 272,136 272,124 C272,112 264,100 268,90 C272,80 284,74 294,70 C308,66 326,66 340,68 Z" fill="#185FA5" opacity="0.85"/>
+            <path d="M320,78 C330,76 342,78 348,86 C354,94 350,104 344,110 C336,116 326,114 320,108 C314,102 312,90 316,82 Z" fill="#B5D4F4" opacity="0.6"/>
+            <path d="M356,118 C364,116 372,122 374,132 C376,142 368,150 360,150 C352,150 346,142 348,134 C350,126 350,120 356,118 Z" fill="#B5D4F4" opacity="0.5"/>
+            <path d="M302,148 C310,144 320,148 322,158 C324,166 316,174 308,172 C300,170 296,162 298,154 Z" fill="#B5D4F4" opacity="0.45"/>
+          </g>
+          <rect x="317" y="105" width="46" height="36" rx="2" fill="none" stroke="#E24B4A" stroke-width="1.8"/>
+          <line x1="340" y1="105" x2="340" y2="141" stroke="#E24B4A" stroke-width="0.8" opacity="0.7"/>
+          <line x1="317" y1="123" x2="363" y2="123" stroke="#E24B4A" stroke-width="0.8" opacity="0.7"/>
+          <rect x="340" y="105" width="23" height="18" rx="1" fill="#E24B4A" opacity="0.35"/>
+          <circle cx="351" cy="114" r="4" fill="#E24B4A"/>
+          <line x1="356" y1="110" x2="372" y2="96" stroke="#E24B4A" stroke-width="0.8" stroke-dasharray="2,2" opacity="0.8"/>
+          <circle cx="375" cy="94" r="2.5" fill="#E24B4A" opacity="0.8"/>
+          <circle cx="340" cy="124" r="100" fill="none" stroke="#185FA5" stroke-width="0.5" stroke-dasharray="4,6" opacity="0.4"/>
+          <text x="340" y="234" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="48" font-weight="700" letter-spacing="8" fill="#042C53">CMAD</text>
+          <text x="340" y="253" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" letter-spacing="2.5" fill="#185FA5">CONVOLUTION MATRIX ANOMALY DETECTION</text>
+          <line x1="160" y1="234" x2="256" y2="234" stroke="#185FA5" stroke-width="0.5" opacity="0.6"/>
+          <line x1="424" y1="234" x2="520" y2="234" stroke="#185FA5" stroke-width="0.5" opacity="0.6"/>
+        </svg>
 
         <span class="tool-type">Web Application</span>
 
@@ -203,9 +239,10 @@
           </div>
           <h3>Convolution Matrix Anomaly Detection (CMAD)</h3>
           <p>
-            Upload your 2D spatio-temporal data, run unsupervised anomaly detection,
-            and visualize clusters of extreme negative events — no labels required.
-            Built for polar and high-latitude geospatial datasets.
+            CMAD is an unsupervised anomaly detection framework designed for 2D spatio-temporal
+      gridded datasets. It applies convolution-based matrix operations over time-series data
+      to surface spatially coherent clusters of extreme negative events — without requiring
+      any labeled training data.
           </p>
         </div>
         <button class="cmad-read-more" onclick="document.getElementById('cmadOverlay').classList.add('open')">
