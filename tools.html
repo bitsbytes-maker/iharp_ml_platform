@@ -4,6 +4,7 @@
   <title>Tools</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
+    /* ── existing grid styles ── */
     .tools-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -12,6 +13,7 @@
       text-align: left;
     }
 
+    /* ── old simple tool cards (Data Viz, ML Explorer) ── */
     .tool-card {
       border: 1px solid #e5e5e5;
       border-radius: 12px;
@@ -20,82 +22,139 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.06);
       transition: box-shadow 0.2s ease, transform 0.2s ease;
     }
-
     .tool-card:hover {
       box-shadow: 0 6px 20px rgba(0,0,0,0.12);
       transform: translateY(-2px);
     }
-
-    .tool-card h3 {
-      margin: 0 0 8px 0;
-      font-size: 18px;
-      color: #0074e0;
-    }
-
+    .tool-card h3 { margin: 0 0 8px 0; font-size: 18px; color: #0074e0; }
     .tool-card .tool-type {
-      font-size: 12px;
-      color: #888;
-      margin-bottom: 12px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+      font-size: 12px; color: #888; margin-bottom: 12px;
+      font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
     }
-
-    .tool-card p {
-      font-size: 14px;
-      line-height: 1.6;
-      color: #555;
-      margin: 0 0 16px 0;
-    }
-
-    .tool-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 16px;
-    }
-
-    .tag {
-      background: #eef4fd;
-      color: #0074e0;
-      font-size: 11px;
-      padding: 3px 9px;
-      border-radius: 20px;
-      font-weight: 600;
-    }
-
-    .tool-links {
-      display: flex;
-      gap: 10px;
-    }
-
+    .tool-card p { font-size: 14px; line-height: 1.6; color: #555; margin: 0 0 16px 0; }
+    .tool-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+    .tag { background: #eef4fd; color: #0074e0; font-size: 11px; padding: 3px 9px; border-radius: 20px; font-weight: 600; }
+    .tool-links { display: flex; gap: 10px; }
     .tool-links a {
-      display: inline-block;
-      padding: 8px 20px;
-      border-radius: 20px;
-      font-size: 13px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background 0.2s ease;
+      display: inline-block; padding: 8px 20px; border-radius: 20px;
+      font-size: 13px; font-weight: 600; text-decoration: none; transition: background 0.2s ease;
+    }
+    .btn-launch { background: #0074e0; color: white; }
+    .btn-launch:hover { background: #005bb5; }
+    .btn-secondary { background: #f0f0f0; color: #333; }
+    .btn-secondary:hover { background: #ddd; }
+
+    /* ── CMAD card ── */
+    .cmad-card {
+      border: 1px solid #e5e5e5;
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+      display: flex;
+      overflow: hidden;
+      grid-column: 1 / -1; /* full width across the grid */
+    }
+    .cmad-card:hover {
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+      transform: translateY(-2px);
     }
 
-    .btn-launch {
-      background: #0074e0;
-      color: white;
+    .cmad-left {
+      width: 200px;
+      min-width: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 24px 16px;
+      border-right: 1px solid #e5e5e5;
     }
+    .cmad-left .tool-type {
+      font-size: 11px; color: #888; text-transform: uppercase;
+      letter-spacing: 0.5px; font-weight: 600;
+    }
+    .cmad-btn-col { display: flex; flex-direction: column; gap: 8px; width: 100%; }
+    .cmad-btn-launch {
+      display: block; width: 100%; text-align: center;
+      background: #0074e0; color: white; padding: 9px 0;
+      border-radius: 20px; font-size: 13px; font-weight: 600;
+      text-decoration: none; transition: background 0.2s ease;
+    }
+    .cmad-btn-launch:hover { background: #005bb5; }
+    .cmad-btn-pkg {
+      display: block; width: 100%; text-align: center;
+      background: #f0f0f0; color: #333; padding: 9px 0;
+      border-radius: 20px; font-size: 13px; font-weight: 600;
+      text-decoration: none; transition: background 0.2s ease;
+    }
+    .cmad-btn-pkg:hover { background: #ddd; }
 
-    .btn-launch:hover {
-      background: #005bb5;
+    .cmad-right {
+      flex: 1;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
+    .cmad-right h3 { margin: 0 0 6px 0; font-size: 18px; color: #0074e0; }
+    .cmad-right p { font-size: 14px; line-height: 1.6; color: #555; margin: 0 0 16px 0; }
+    .cmad-read-more {
+      background: none; border: none; color: #0074e0;
+      font-size: 13px; font-weight: 600; cursor: pointer;
+      padding: 0; text-align: left;
+    }
+    .cmad-read-more:hover { text-decoration: underline; }
 
-    .btn-secondary {
-      background: #f0f0f0;
-      color: #333;
+    /* ── popup overlay ── */
+    .cmad-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.38);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
     }
+    .cmad-overlay.open { display: flex; }
 
-    .btn-secondary:hover {
-      background: #ddd;
+    .cmad-popup {
+      background: #fff;
+      border-radius: 14px;
+      border: 1px solid #e5e5e5;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+      width: 560px;
+      max-width: 92vw;
+      max-height: 80vh;
+      overflow-y: auto;
+      padding: 32px;
+      position: relative;
     }
+    .cmad-popup-close {
+      position: absolute; top: 16px; right: 20px;
+      background: none; border: none; font-size: 22px;
+      cursor: pointer; color: #888; line-height: 1;
+    }
+    .cmad-popup-close:hover { color: #333; }
+    .cmad-popup .popup-sub {
+      font-size: 11px; color: #888; text-transform: uppercase;
+      letter-spacing: 0.5px; font-weight: 600; margin-bottom: 6px;
+    }
+    .cmad-popup h3 { font-size: 18px; color: #0074e0; margin: 0 0 16px 0; padding-right: 28px; }
+    .cmad-popup hr { border: none; border-top: 1px solid #e5e5e5; margin: 16px 0; }
+    .cmad-popup .popup-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+    .cmad-popup p { font-size: 14px; line-height: 1.7; color: #555; margin: 0 0 12px 0; }
+    .cmad-popup h4 {
+      font-size: 11px; font-weight: 600; color: #888;
+      text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 12px 0;
+    }
+    .cmad-popup .article-link {
+      display: flex; align-items: flex-start; gap: 8px;
+      font-size: 13px; color: #0074e0; text-decoration: none; margin-bottom: 10px; line-height: 1.5;
+    }
+    .cmad-popup .article-link:hover { text-decoration: underline; }
+    .cmad-popup .article-link::before { content: "↗"; flex-shrink: 0; }
   </style>
 </head>
 
@@ -105,7 +164,6 @@
   <div class="logo">
     <img src="images/iharp-logo.jpg">
   </div>
-
   <nav class="nav-menu">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -121,34 +179,47 @@
 
   <div class="tools-grid">
 
-    <!-- CMAD Tool -->
-    <div class="tool-card">
-      <h3>CMAD — Anomaly Detection Tool</h3>
-      <div class="tool-type">Web Application</div>
-      <p>
-        Interactive interface for the <strong>Convolution Matrix Anomaly Detection (CMAD)</strong>
-        framework. Upload your 2D spatio-temporal data, run unsupervised anomaly detection,
-        and visualize clusters of extreme negative events — no labels required.
-      </p>
-      <div class="tool-tags">
-        <span class="tag">GeoAI</span>
-        <span class="tag">Anomaly Detection</span>
-        <span class="tag">Climate</span>
-        <span class="tag">Visualization</span>
+    <!-- ── CMAD Tool ── -->
+    <div class="cmad-card">
+
+      <div class="cmad-left">
+        <img src="images/cmad_logo.svg" alt="CMAD Logo" style="width:150px; height:auto; display:block;">
+
+        <span class="tool-type">Web Application</span>
+
+        <div class="cmad-btn-col">
+          <a href="#" target="_blank" class="cmad-btn-launch">Launch Tool ↗</a>
+          <a href="https://pypi.org/project/cmad/" target="_blank" class="cmad-btn-pkg">View Package</a>
+        </div>
       </div>
-      <div class="tool-links">
-        <a href="#" target="_blank" class="btn-launch">Launch Tool ↗</a>
-        <a href="https://pypi.org/project/cmad/" target="_blank" class="btn-secondary">View Package</a>
+
+      <div class="cmad-right">
+        <div>
+          <div class="tool-tags">
+            <span class="tag">GeoAI</span>
+            <span class="tag">Anomaly Detection</span>
+            <span class="tag">Climate</span>
+            <span class="tag">Visualization</span>
+          </div>
+          <h3>Convolution Matrix Anomaly Detection (CMAD)</h3>
+          <p>
+            Upload your 2D spatio-temporal data, run unsupervised anomaly detection,
+            and visualize clusters of extreme negative events — no labels required.
+            Built for polar and high-latitude geospatial datasets.
+          </p>
+        </div>
+        <button class="cmad-read-more" onclick="document.getElementById('cmadOverlay').classList.add('open')">
+          Read more →
+        </button>
       </div>
     </div>
+    <!-- end CMAD card -->
 
-    <!-- Data Visualization Tool (existing) -->
+    <!-- ── Data Visualization Tool ── -->
     <div class="tool-card">
       <h3>Data Visualization Tool</h3>
       <div class="tool-type">Web Application</div>
-      <p>
-        Explore and visualize scientific datasets with interactive charts and spatial maps.
-      </p>
+      <p>Explore and visualize scientific datasets with interactive charts and spatial maps.</p>
       <div class="tool-tags">
         <span class="tag">Visualization</span>
         <span class="tag">Data Science</span>
@@ -158,13 +229,11 @@
       </div>
     </div>
 
-    <!-- ML Explorer (existing) -->
+    <!-- ── ML Explorer ── -->
     <div class="tool-card">
       <h3>ML Explorer</h3>
       <div class="tool-type">Web Application</div>
-      <p>
-        An interactive environment to experiment with machine learning models and parameters.
-      </p>
+      <p>An interactive environment to experiment with machine learning models and parameters.</p>
       <div class="tool-tags">
         <span class="tag">Machine Learning</span>
         <span class="tag">Interactive</span>
@@ -175,45 +244,94 @@
     </div>
 
   </div>
+</div>
 
+<!-- ── CMAD Read More Popup ── -->
+<div class="cmad-overlay" id="cmadOverlay" onclick="closeCmadOverlay(event)">
+  <div class="cmad-popup" id="cmadPopup">
+    <button class="cmad-popup-close" onclick="document.getElementById('cmadOverlay').classList.remove('open')" aria-label="Close">×</button>
+
+    <p class="popup-sub">Web Application</p>
+    <h3>Convolution Matrix Anomaly Detection (CMAD)</h3>
+
+    <div class="popup-tags">
+      <span class="tag">GeoAI</span>
+      <span class="tag">Anomaly Detection</span>
+      <span class="tag">Climate</span>
+      <span class="tag">Visualization</span>
+    </div>
+
+    <hr>
+
+    <p>
+      CMAD is an unsupervised anomaly detection framework designed for 2D spatio-temporal
+      gridded datasets. It applies convolution-based matrix operations over time-series data
+      to surface spatially coherent clusters of extreme negative events — without requiring
+      any labeled training data.
+    </p>
+    <p>
+      The framework is particularly suited for polar and high-latitude datasets, where
+      conventional anomaly detection methods struggle with irregular spatial structure and
+      sparse observational records. Use cases include detecting cold spells, precipitation
+      deficits, sea ice extent anomalies, and other climate extremes.
+    </p>
+    <p>
+      The interactive web tool lets you upload your own NetCDF or CSV data, configure
+      detection parameters, and explore results through dynamic spatial visualizations
+      and cluster summaries — all in the browser.
+    </p>
+
+    <hr>
+
+    <h4>Related Articles &amp; Resources</h4>
+    <a href="https://pypi.org/project/cmad/" target="_blank" class="article-link">
+      CMAD on PyPI — official package documentation
+    </a>
+    <a href="https://github.com/search?q=CMAD+anomaly+detection+climate" target="_blank" class="article-link">
+      CMAD source code &amp; examples — GitHub
+    </a>
+    <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2118285" target="_blank" class="article-link">
+      NSF iHARP award — HDR Institute for polar regions
+    </a>
+    <a href="https://iharp.umbc.edu" target="_blank" class="article-link">
+      iHARP project homepage
+    </a>
+  </div>
 </div>
 
 <footer class="nsf-footer">
-
   <div class="footer-content">
-
     <div class="footer-left">
-      <h3>iHARP Machine Learning Tools & Packages</h3>
-      <p>
-        NSF HDR Institute for Harnessing Data and Model Revolution in the Polar Regions
-      </p>
-
+      <h3>iHARP Machine Learning Tools &amp; Packages</h3>
+      <p>NSF HDR Institute for Harnessing Data and Model Revolution in the Polar Regions</p>
       <div class="nsf-logo">
         <img src="images/nsf-logo.png">
         <span>U.S. National Science Foundation</span>
       </div>
     </div>
-
     <div class="footer-links">
       <h4>Quick Links</h4>
       <a href="about.html">About</a>
       <a href="#">Resources</a>
       <a href="#">News</a>
     </div>
-
     <div class="footer-links">
       <h4>Institutes</h4>
       <a href="#">iHARP</a>
     </div>
-
   </div>
-
   <div class="footer-bottom">
-    <p>© 2026 iHARP ML Platform</p>
+    <p>© 2026 iHARP Tool Catalog</p>
   </div>
-
 </footer>
 
 <script src="js/main.js"></script>
+<script>
+  function closeCmadOverlay(e) {
+    if (e.target === document.getElementById('cmadOverlay')) {
+      document.getElementById('cmadOverlay').classList.remove('open');
+    }
+  }
+</script>
 </body>
 </html>
