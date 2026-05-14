@@ -25,7 +25,7 @@ body {
 
 /* LOGO (FIXED SIZE ISSUE) */
 .logo img {
-  height: 42px;   /* 🔥 key fix */
+  height: 42px;
   width: auto;
   object-fit: contain;
 }
@@ -90,6 +90,14 @@ button {
 
 button:hover {
   background: #005bb5;
+}
+
+/* fix focus outline on plain buttons */
+button:focus,
+button:active,
+button:focus-visible {
+  outline: none;
+  box-shadow: none;
 }
 
 /* ===== DROPDOWN ===== */
