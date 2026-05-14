@@ -12,6 +12,7 @@
       text-align: left;
     }
 
+    /* ── simple package cards (GeoAI, Climate ML) ── */
     .package-card {
       border: 1px solid #e5e5e5;
       border-radius: 12px;
@@ -20,99 +21,179 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.06);
       transition: box-shadow 0.2s ease, transform 0.2s ease;
     }
-
     .package-card:hover {
       box-shadow: 0 6px 20px rgba(0,0,0,0.12);
       transform: translateY(-2px);
     }
-
-    .package-card h3 {
-      margin: 0 0 8px 0;
-      font-size: 18px;
-      color: #0074e0;
-    }
-
-    .package-card .pkg-version {
-      font-size: 12px;
-      color: #888;
-      margin-bottom: 12px;
-    }
-
-    .package-card p {
-      font-size: 14px;
-      line-height: 1.6;
-      color: #555;
-      margin: 0 0 16px 0;
-    }
-
-    .package-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 16px;
-    }
-
-    .tag {
-      background: #eef4fd;
-      color: #0074e0;
-      font-size: 11px;
-      padding: 3px 9px;
-      border-radius: 20px;
-      font-weight: 600;
-    }
-
-    .pkg-links {
-      display: flex;
-      gap: 10px;
-    }
-
+    .package-card h3 { margin: 0 0 8px 0; font-size: 18px; color: #0074e0; }
+    .package-card .pkg-version { font-size: 12px; color: #888; margin-bottom: 12px; }
+    .package-card p { font-size: 14px; line-height: 1.6; color: #555; margin: 0 0 16px 0; }
+    .package-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+    .tag { background: #eef4fd; color: #0074e0; font-size: 11px; padding: 3px 9px; border-radius: 20px; font-weight: 600; }
+    .pkg-links { display: flex; gap: 10px; }
     .pkg-links a {
-      display: inline-block;
-      padding: 7px 16px;
-      border-radius: 20px;
-      font-size: 13px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background 0.2s ease;
+      display: inline-block; padding: 7px 16px; border-radius: 20px;
+      font-size: 13px; font-weight: 600; text-decoration: none; transition: background 0.2s ease;
     }
-
-    .btn-pypi {
-      background: #0074e0;
-      color: white;
-    }
-
-    .btn-pypi:hover {
-      background: #005bb5;
-    }
-
-    .btn-github {
-      background: #f0f0f0;
-      color: #333;
-    }
-
-    .btn-github:hover {
-      background: #ddd;
-    }
-
-    .btn-paper {
-      background: #f0f7ef;
-      color: #2a7a2a;
-    }
-
-    .btn-paper:hover {
-      background: #d8edd6;
-    }
-
+    .btn-pypi { background: #0074e0; color: white; }
+    .btn-pypi:hover { background: #005bb5; }
+    .btn-github { background: #f0f0f0; color: #333; }
+    .btn-github:hover { background: #ddd; }
+    .btn-paper { background: #f0f7ef; color: #2a7a2a; }
+    .btn-paper:hover { background: #d8edd6; }
     .install-block {
-      background: #f5f7fa;
-      border-radius: 6px;
-      padding: 8px 14px;
-      font-family: monospace;
-      font-size: 13px;
-      color: #333;
-      margin-bottom: 16px;
-      border: 1px solid #e5e5e5;
+      background: #f5f7fa; border-radius: 6px; padding: 8px 14px;
+      font-family: monospace; font-size: 13px; color: #333;
+      margin-bottom: 16px; border: 1px solid #e5e5e5;
     }
+
+    /* ── CMAD package card ── */
+    .cmad-card {
+      border: 1px solid #e5e5e5;
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+      display: flex;
+      overflow: hidden;
+      grid-column: 1 / -1;
+    }
+    .cmad-card:hover {
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+      transform: translateY(-2px);
+    }
+
+    .cmad-left {
+      width: 200px;
+      min-width: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 24px 16px;
+      border-right: 1px solid #e5e5e5;
+    }
+    .cmad-left .tool-type {
+      font-size: 11px; color: #888; text-transform: uppercase;
+      letter-spacing: 0.5px; font-weight: 600;
+    }
+    .cmad-left .pkg-version-badge {
+      font-size: 11px; color: #888; text-align: center; line-height: 1.5;
+    }
+    .cmad-btn-col { display: flex; flex-direction: column; gap: 8px; width: 100%; }
+    .cmad-btn-pypi {
+      display: block; width: 100%; text-align: center;
+      background: #0074e0; color: white; padding: 9px 0;
+      border-radius: 20px; font-size: 13px; font-weight: 600;
+      text-decoration: none; transition: background 0.2s ease;
+    }
+    .cmad-btn-pypi:hover { background: #005bb5; }
+    .cmad-btn-github {
+      display: block; width: 100%; text-align: center;
+      background: #f0f0f0; color: #333; padding: 9px 0;
+      border-radius: 20px; font-size: 13px; font-weight: 600;
+      text-decoration: none; transition: background 0.2s ease;
+    }
+    .cmad-btn-github:hover { background: #ddd; }
+    .cmad-btn-paper {
+      display: block; width: 100%; text-align: center;
+      background: #f0f7ef; color: #2a7a2a; padding: 9px 0;
+      border-radius: 20px; font-size: 13px; font-weight: 600;
+      text-decoration: none; transition: background 0.2s ease;
+    }
+    .cmad-btn-paper:hover { background: #d8edd6; }
+
+    .cmad-right {
+      flex: 1;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .cmad-right h3 { margin: 0 0 4px 0; font-size: 18px; color: #0074e0; }
+    .cmad-right .pkg-version { font-size: 12px; color: #888; margin-bottom: 12px; }
+    .cmad-right p { font-size: 14px; line-height: 1.6; color: #555; margin: 0 0 12px 0; }
+    .cmad-install {
+      background: #f5f7fa; border-radius: 6px; padding: 7px 14px;
+      font-family: monospace; font-size: 13px; color: #333;
+      margin-bottom: 14px; border: 1px solid #e5e5e5; display: inline-block;
+    }
+    .cmad-read-more {
+      background: none; border: none; color: #555;
+      font-size: 13px; font-weight: 600; cursor: pointer;
+      padding: 0; text-align: left;
+      text-decoration: none; outline: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .cmad-read-more:hover { color: #555 !important; text-decoration: none !important; background: none !important; }
+    .cmad-read-more:focus,
+    .cmad-read-more:active,
+    .cmad-read-more:focus-visible {
+      outline: none !important;
+      box-shadow: none !important;
+      background: none !important;
+      color: #555 !important;
+    }
+
+    /* ── popup overlay ── */
+    .cmad-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.38);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+    .cmad-overlay.open { display: flex; }
+    .cmad-popup {
+      background: #fff;
+      border-radius: 14px;
+      border: 1px solid #e5e5e5;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+      width: 580px;
+      max-width: 92vw;
+      max-height: 82vh;
+      overflow-y: auto;
+      padding: 32px;
+      position: relative;
+    }
+    .cmad-popup-close {
+      position: absolute; top: 16px; right: 20px;
+      background: none; border: none; font-size: 22px;
+      cursor: pointer; color: #888; line-height: 1;
+    }
+    .cmad-popup-close:hover { color: #333; }
+    .cmad-popup-close:focus,
+    .cmad-popup-close:active,
+    .cmad-popup-close:focus-visible {
+      outline: none !important; box-shadow: none !important; background: none !important;
+    }
+    .cmad-popup .popup-sub {
+      font-size: 11px; color: #888; text-transform: uppercase;
+      letter-spacing: 0.5px; font-weight: 600; margin-bottom: 6px;
+    }
+    .cmad-popup h3 { font-size: 18px; color: #0074e0; margin: 0 0 4px 0; padding-right: 28px; }
+    .cmad-popup .popup-version { font-size: 12px; color: #888; margin-bottom: 14px; }
+    .cmad-popup hr { border: none; border-top: 1px solid #e5e5e5; margin: 16px 0; }
+    .cmad-popup .popup-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+    .cmad-popup p { font-size: 14px; line-height: 1.7; color: #555; margin: 0 0 12px 0; }
+    .cmad-popup h4 {
+      font-size: 11px; font-weight: 600; color: #888;
+      text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 12px 0;
+    }
+    .cmad-popup .popup-install {
+      background: #f5f7fa; border-radius: 6px; padding: 8px 14px;
+      font-family: monospace; font-size: 13px; color: #333;
+      margin-bottom: 16px; border: 1px solid #e5e5e5;
+    }
+    .cmad-popup .article-link {
+      display: flex; align-items: flex-start; gap: 8px;
+      font-size: 13px; color: #0074e0; text-decoration: none; margin-bottom: 10px; line-height: 1.5;
+    }
+    .cmad-popup .article-link:hover { text-decoration: underline; }
+    .cmad-popup .article-link::before { content: "↗"; flex-shrink: 0; }
   </style>
 </head>
 
@@ -122,7 +203,6 @@
   <div class="logo">
     <img src="images/iharp-logo.jpg">
   </div>
-
   <nav class="nav-menu">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -138,39 +218,52 @@
 
   <div class="packages-grid">
 
-    <!-- CMAD Package -->
-    <div class="package-card">
-      <h3>CMAD</h3>
-      <div class="pkg-version">v0.1.0.post6 &nbsp;·&nbsp; Python ≥ 3.8 &nbsp;·&nbsp; License: iHARP</div>
-      <p>
-        A lightweight, unsupervised framework for detecting <strong>clusters of extreme negative
-        spatio-temporal anomalies</strong> in sequential 2D data. Designed for applications such as
-        sea ice melt detection, environmental degradation, and geospatial change analysis.
-        Requires no training labels and adapts automatically to arbitrary spatial resolutions.
-      </p>
-      <div class="package-tags">
-        <span class="tag">GeoAI</span>
-        <span class="tag">Anomaly Detection</span>
-        <span class="tag">Climate</span>
-        <span class="tag">Cryosphere</span>
-        <span class="tag">Spatio-Temporal</span>
-        <span class="tag">Unsupervised</span>
+    <!-- ── CMAD Package ── -->
+    <div class="cmad-card">
+
+      <div class="cmad-left">
+        <img src="images/cmad_logo.png" alt="CMAD Logo" style="width:150px; height:auto; display:block;">
+        <span class="tool-type">Python Package</span>
+        <div class="pkg-version-badge">v0.1.0.post6 · Python ≥ 3.8<br>License: iHARP</div>
+        <div class="cmad-btn-col">
+          <a href="https://pypi.org/project/cmad/" target="_blank" class="cmad-btn-pypi">PyPI ↗</a>
+          <a href="https://github.com/bitsbytes-maker/cmad" target="_blank" class="cmad-btn-github">GitHub</a>
+          <a href="https://doi.org/10.1145/3678717.3691280" target="_blank" class="cmad-btn-paper">Paper</a>
+        </div>
       </div>
-      <div class="install-block">pip install cmad</div>
-      <div class="pkg-links">
-        <a href="https://pypi.org/project/cmad/" target="_blank" class="btn-pypi">PyPI</a>
-        <a href="https://github.com/bitsbytes-maker/cmad" target="_blank" class="btn-github">GitHub</a>
-        <a href="https://doi.org/10.1145/3678717.3691280" target="_blank" class="btn-paper">Paper</a>
+
+      <div class="cmad-right">
+        <div>
+          <div class="package-tags" style="margin-bottom:10px;">
+            <span class="tag">GeoAI</span>
+            <span class="tag">Anomaly Detection</span>
+            <span class="tag">Climate</span>
+            <span class="tag">Cryosphere</span>
+            <span class="tag">Spatio-Temporal</span>
+            <span class="tag">Unsupervised</span>
+          </div>
+          <h3>Convolution Matrix Anomaly Detection (CMAD)</h3>
+          <div class="pkg-version">v0.1.0.post6 &nbsp;·&nbsp; Python ≥ 3.8 &nbsp;·&nbsp; License: iHARP</div>
+          <div class="cmad-install">pip install cmad</div>
+          <p>
+            A lightweight, unsupervised framework for detecting clusters of extreme negative
+            spatio-temporal anomalies in sequential 2D data. Designed for applications such as
+            sea ice melt detection, environmental degradation, and geospatial change analysis.
+            Requires no training labels and adapts automatically to arbitrary spatial resolutions.
+          </p>
+        </div>
+        <button class="cmad-read-more" onclick="document.getElementById('cmadOverlay').classList.add('open')">
+          Read more →
+        </button>
       </div>
     </div>
+    <!-- end CMAD card -->
 
-    <!-- GeoAI Toolkit (existing placeholder) -->
+    <!-- ── GeoAI Toolkit ── -->
     <div class="package-card">
       <h3>GeoAI Toolkit</h3>
       <div class="pkg-version">Coming soon</div>
-      <p>
-        Tools for geospatial AI workflows and spatial data processing pipelines.
-      </p>
+      <p>Tools for geospatial AI workflows and spatial data processing pipelines.</p>
       <div class="package-tags">
         <span class="tag">GeoAI</span>
         <span class="tag">GIS</span>
@@ -180,13 +273,11 @@
       </div>
     </div>
 
-    <!-- Climate ML Package (existing placeholder) -->
+    <!-- ── Climate ML Package ── -->
     <div class="package-card">
       <h3>Climate ML Package</h3>
       <div class="pkg-version">Coming soon</div>
-      <p>
-        Machine learning utilities tailored for climate and atmospheric science datasets.
-      </p>
+      <p>Machine learning utilities tailored for climate and atmospheric science datasets.</p>
       <div class="package-tags">
         <span class="tag">Climate</span>
         <span class="tag">ML</span>
@@ -197,45 +288,103 @@
     </div>
 
   </div>
+</div>
 
+<!-- ── CMAD Read More Popup ── -->
+<div class="cmad-overlay" id="cmadOverlay" onclick="closeCmadOverlay(event)">
+  <div class="cmad-popup" id="cmadPopup">
+    <button class="cmad-popup-close" onclick="document.getElementById('cmadOverlay').classList.remove('open')" aria-label="Close">×</button>
+
+    <p class="popup-sub">Python Package</p>
+    <h3>CMAD</h3>
+    <p class="popup-version">v0.1.0.post6 &nbsp;·&nbsp; Python ≥ 3.8 &nbsp;·&nbsp; License: iHARP</p>
+
+    <div class="popup-tags">
+      <span class="tag">GeoAI</span>
+      <span class="tag">Anomaly Detection</span>
+      <span class="tag">Climate</span>
+      <span class="tag">Cryosphere</span>
+      <span class="tag">Spatio-Temporal</span>
+      <span class="tag">Unsupervised</span>
+    </div>
+
+    <div class="popup-install">pip install cmad</div>
+
+    <hr>
+
+    <p>
+      CMAD is a lightweight, unsupervised framework
+      for detecting clusters of extreme negative spatio-temporal anomalies in sequential 2D
+      gridded data. It applies convolution-based matrix operations over time-series data to
+      surface spatially coherent anomalies — without requiring any labeled training data.
+    </p>
+    <p>
+      Designed for applications such as sea ice melt detection, environmental degradation,
+      precipitation deficits, and geospatial change analysis. The framework adapts
+      automatically to arbitrary spatial resolutions and is particularly suited for polar
+      and high-latitude datasets where conventional methods struggle with irregular spatial
+      structure and sparse observational records.
+    </p>
+    <p>
+      The package is available on PyPI and supports NetCDF and array-based inputs. It
+      integrates seamlessly into standard Python scientific workflows using NumPy, SciPy,
+      and xarray.
+    </p>
+
+    <hr>
+
+    <h4>Related Articles &amp; Resources</h4>
+    <a href="https://pypi.org/project/cmad/" target="_blank" class="article-link">
+      CMAD on PyPI — official package documentation
+    </a>
+    <a href="https://github.com/bitsbytes-maker/cmad" target="_blank" class="article-link">
+      CMAD source code &amp; examples — GitHub
+    </a>
+    <a href="https://doi.org/10.1145/3678717.3691280" target="_blank" class="article-link">
+      Published paper — ACM SIGSPATIAL 2024
+    </a>
+    <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2118285" target="_blank" class="article-link">
+      NSF iHARP award — HDR Institute for polar regions
+    </a>
+    <a href="https://iharp.umbc.edu" target="_blank" class="article-link">
+      iHARP project homepage
+    </a>
+  </div>
 </div>
 
 <footer class="nsf-footer">
-
   <div class="footer-content">
-
     <div class="footer-left">
-      <h3>iHARP Machine Learning Tools & Packages</h3>
-      <p>
-        NSF HDR Institute for Harnessing Data and Model Revolution in the Polar Regions
-      </p>
-
+      <h3>iHARP Machine Learning Tools &amp; Packages</h3>
+      <p>NSF HDR Institute for Harnessing Data and Model Revolution in the Polar Regions</p>
       <div class="nsf-logo">
         <img src="images/nsf-logo.png">
         <span>U.S. National Science Foundation</span>
       </div>
     </div>
-
     <div class="footer-links">
       <h4>Quick Links</h4>
       <a href="about.html">About</a>
       <a href="#">Resources</a>
       <a href="#">News</a>
     </div>
-
     <div class="footer-links">
       <h4>Institutes</h4>
       <a href="#">iHARP</a>
     </div>
-
   </div>
-
   <div class="footer-bottom">
     <p>© 2026 iHARP Tool Catalog</p>
   </div>
-
 </footer>
 
 <script src="js/main.js"></script>
+<script>
+  function closeCmadOverlay(e) {
+    if (e.target === document.getElementById('cmadOverlay')) {
+      document.getElementById('cmadOverlay').classList.remove('open');
+    }
+  }
+</script>
 </body>
 </html>
