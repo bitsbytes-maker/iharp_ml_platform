@@ -106,7 +106,7 @@
       padding: 0; text-align: left;
       text-decoration: none; outline: none;
     }
-    .cmad-read-more:hover { color: #005bb5; text-decoration: none; }
+    .cmad-read-more:hover { color: #0074e0; text-decoration: underline; }
     .cmad-read-more:focus { outline: none; }
 
     /* ── popup overlay ── */
@@ -205,10 +205,9 @@
           </div>
           <h3>Convolution Matrix Anomaly Detection (CMAD)</h3>
           <p>
-            CMAD is an unsupervised anomaly detection framework designed for 2D spatio-temporal
-      gridded datasets. It applies convolution-based matrix operations over time-series data
-      to surface spatially coherent clusters of extreme negative events — without requiring
-      any labeled training data.
+            Upload your 2D spatio-temporal data, run unsupervised anomaly detection,
+            and visualize clusters of extreme negative events — no labels required.
+            Built for polar and high-latitude geospatial datasets.
           </p>
         </div>
         <button class="cmad-read-more" onclick="document.getElementById('cmadOverlay').classList.add('open')">
